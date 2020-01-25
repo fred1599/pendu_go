@@ -33,8 +33,10 @@ func main() {
             fmt.Println("Entrer votre lettre: ")
             scanner := bufio.NewScanner(os.Stdin)
             if scanner.Scan() {
-                c := scanner.Bytes() 
-                secret = replace_char(secret, word, c[0])
+                c := scanner.Bytes()
+                if len(c) != 0 {
+                    secret = replace_char(secret, word, c[0])
+                }
             }
         }
         fmt.Println(word)
